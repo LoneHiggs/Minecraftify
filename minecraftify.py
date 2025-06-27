@@ -7,14 +7,14 @@ from screeninfo import get_monitors
 import numpy as np
 
 def main():
-    parser = argparse.ArgumentParser("minecraft_block_colors.py", "", 
+    parser = argparse.ArgumentParser("minecraftify.py", "", 
                                      "Takes the Minecraft texture atlas, splits it into blocks, " + 
                                      "finds the average color and contrast of each one, " +
                                      "and uses those to replace pixels in the input image.")
     parser.add_argument("-af", "--atlasfile", dest="af", 
                         help="Input file for the minecraft texture atlas", 
-                        default = "25w20a_blocks.png-atlas.png")
-    parser.add_argument("-i", "--image", dest="img", help="File to convert to minecraft blocks", default="rickroll_first_frame.png")
+                        default = "25w20a_atlas_cropped.png")
+    parser.add_argument("-i", "--image", dest="img", help="File to convert to minecraft blocks", default="testme.png")
     parser.add_argument("-s", "--save", dest="s", help="Save full image (not scaled down)", action="store_true")
     parser.add_argument("-sf", "--saveto", dest="sf", help="Save to specific file name")
     parser.add_argument("-as", "--atlastilesize", dest="ats", 

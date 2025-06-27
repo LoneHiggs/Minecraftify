@@ -2,6 +2,7 @@ from PIL import Image
 import numpy as np
 import pygame
 import cv2
+import imageio
 
 def pixel_list(image):
     """
@@ -166,3 +167,26 @@ def np_rgb_to_hsb_fast(rgb_img: np.ndarray) -> np.ndarray:
 
 def np_rgb_to_hsb_fast(img):
     return cv2.cvtColor(img, cv2.COLOR_RGB2HSV)
+
+def make_gif(images, output_file, fps=60):
+    with imageio.get_writer(output_file, mode='I', fps=fps) as writer:
+        for img in images:
+            image = np.asarray(img)
+            writer.append_data(image)
+
+def gif_to_list(filepath):
+    frames = []
+    with Image.open(filepath) as img:
+        try:
+            while True:
+                frames.append(img.copy())
+                img.seek(img.tell() + 1)
+        except EOFError:
+            pass 
+    return frames
+
+def flip_img_array(array):
+    return array.transpose(1, 0, 2)
+
+if __name__ == "__main__":
+    pass

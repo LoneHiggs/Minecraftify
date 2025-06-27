@@ -1,0 +1,7 @@
+pygame
+argparse
+screeninfo
+numpy
+numba
+pillow
+opencv-python

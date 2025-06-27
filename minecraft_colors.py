@@ -25,7 +25,7 @@ def main():
     if args.af:
         tiles = split_tiles(args.af, args.ats, args.ats)
     else:
-        tiles = split_tiles("25w20a_blocks.png-atlas.png", args.ats, args.ats)
+        tiles = split_tiles("25w20a_atlas_cropped.png", args.ats, args.ats)
     avg_color_data = {}
     contrast_data = {}
     for i in range(len(tiles)):
@@ -66,7 +66,7 @@ def main():
 if __name__ == "__main__":
     main()
 
-def generate_colordata(atlas = "25w20a_blocks.png-atlas.png", hsb = False, contrast_limit = None, tilesize=16):
+def generate_colordata(atlas = "25w20a_atlas_cropped.png", hsb = False, contrast_limit = None, tilesize=16):
     if type(atlas) == list:
         tiles = atlas
     else:
