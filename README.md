@@ -9,7 +9,7 @@ Useful for pixelart.
  - Converts all pixels in an image into Minecraft textures
  - Allows for any texture atlas, including non-minecraft ones, and of any tile size
  - Fast processing
- - Coming soon: Convert a .gif or video
+ - Convert a .gif with speed
 
 ## Getting started
 
@@ -30,7 +30,7 @@ python minecraftify.py -i image.png -af alternativealtas.png
 
 python minecraft_colors.py -hex hexcode
 
-minecraftify_video.py is not yet implemented
+minecraftify_video.py input.gif outputfilename.gif
 
 ## Notes
 
